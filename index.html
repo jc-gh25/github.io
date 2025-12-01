@@ -1,67 +1,202 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landing Page</title>
-    <style>
-        body {
-            background: linear-gradient(#000011, #1a1a4d);
-            margin: 0;
-            font-family: Arial, sans-serif;
-        }
-        section {
-            padding: 50px 20px;
-        }
-        .btn {
-            background-color: #d3d3d3;
-            color: black;
-            padding: 10px 20px;
-            border: none;
-            cursor: pointer;
-        }
-        .bio {
-            color: black;
-        }
-        .contact-form {
-            width: 100%;
-            max-width: 600px;
-            margin: auto;
-        }
-        .send-button {
-            background-color: #90EE90;
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>JC - Software Developer &amp; AI Analyst</title>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0 }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      background: linear-gradient(275deg,#000011 0%,#1a1a4d 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .container {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 20px 60px rgba(0,0,0,.3);
+      max-width: 780px;
+      width: 100%;
+      overflow: hidden;
+    }
+    .header {
+      background: linear-gradient(275deg,#000011 0%,#1a1a4d 100%);
+      color: #fff;
+      padding: 56px 36px;
+      text-align: center;
+    }
+    .avatar {
+      width: 110px; height: 110px; border-radius: 50%;
+      background: rgba(255,255,255,.08);
+      margin: 0 auto 18px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2.6rem; border: 3px solid rgba(255,255,255,.12);
+    }
+    h1 { font-size: 2rem; margin-bottom: 6px; }
+    .title { font-size: 1rem; opacity: .95; margin-bottom: 10px; font-weight: 600 }
+    .tagline { font-size: .92rem; opacity: .85 }
+    .content { padding: 36px }
+    .bio { color: #000; line-height: 1.65; margin-bottom: 36px; font-size: .95rem }
+    .section { margin-bottom: 50px }
+    .section-title {
+      font-size: 1.05rem; font-weight: 700; color: #1a1a4d;
+      margin-bottom: 14px; padding-bottom: 8px; border-bottom: 1px solid #f0f0f0;
+    }
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px }
+    .skill-tag {
+      background: #f5f5f5; border: 1px solid #e6e6e6; color: #333;
+      padding: 10px; border-radius: 8px; text-align: center; font-weight: 600;
+    }
+    .links-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px }
+    .link-btn {
+      display:inline-flex; align-items:center; justify-content:center; gap:8px;
+      padding:12px 14px; background:#d3d3d3; color:#000; text-decoration:none;
+      border-radius:8px; font-weight:700; border:1px solid transparent;
+    }
+    .link-btn:hover { background:#bfbfbf }
+    .projects-list { display:flex; flex-direction:column; gap:12px }
+    .project-card {
+      background:#f6f6f6; padding:14px; border-radius:10px; border-left:4px solid #1a1a4d;
+      text-decoration:none; color:inherit;
+    }
+    .project-name { font-weight:700; color:#222; margin-bottom:6px }
+    .project-desc { color:#555; font-size:.92rem }
+    .highlights { background:#fafafa; padding:14px; border-radius:10px; border-left:4px solid #1a1a4d }
+    .highlights ul { list-style:none; padding-left:0 }
+    .highlights li { position:relative; padding-left:22px; margin-bottom:8px; color:#444 }
+    .highlights li:before { content:"▸"; position:absolute; left:0; color:#1a1a4d }
+    .contact-section {
+      background:#f5f5f5; padding:18px; border-radius:8px; border:1px solid #e6e6e6; text-align:left;
+    }
+    .contact-section h3 { color:#1a1a4d; margin-bottom:8px }
+    .contact-note { color:#555; margin-bottom:12px }
+    .form-group { margin-bottom:12px }
+    label { display:block; margin-bottom:6px; font-weight:600; color:#333; font-size:.9rem }
+    input[type=text], input[type=email], textarea {
+      width:100%; padding:10px; border:1px solid #ddd; border-radius:6px; font-size:.95rem;
+    }
+    textarea { min-height:120px; resize:vertical }
+    .submit-btn {
+      width:100%; padding:12px; background:#90EE90; color:#000; border:none; border-radius:6px; font-weight:700; cursor:pointer;
+    }
+    .submit-btn:hover { background:#7CCD7C }
+    .footer { background:#fafafa; padding:14px 20px; text-align:center; color:#777; font-size:.85rem; border-top:1px solid #eee }
+    @media (max-width:600px) {
+      .header { padding:28px 20px }
+      .content { padding:24px }
+      .avatar { width:88px; height:88px; font-size:2rem }
+      .section { margin-bottom:36px }
+    }
+  </style>
 </head>
 <body>
-
-    <header>
-        <h1>Welcome to My Landing Page</h1>
+  <div class="container">
+    <header class="header">
+      <div class="avatar">💻</div>
+      <h1>JC</h1>
+      <div class="title">Software Developer &amp; AI Analyst</div>
+      <div class="tagline">Java | Spring Boot | Backend Development | AI/ML Training — Phoenix, AZ • 15+ years remote work experience</div>
     </header>
 
-    <section class="bio">
-        <h2>About Me</h2>
-        <p>Your bio text here. Include your career highlights, such as completed Java certification.</p>
-        <p>Links: <a href="https://www.linkedin.com/in/yourprofile">LinkedIn</a>, <a href="https://github.com/yourprofile">GitHub</a></p>
-    </section>
+    <main class="content">
+      <section class="bio">
+        <p>Computer Science graduate (Summa Cum Laude) with 15+ years of remote work experience across technical support, product management, and business roles. Recently completed a 5 month Back End Software Development bootcamp with working knowledge of Java, Spring Boot, and MySQL databases. Proven ability to learn quickly and adapt to new technologies and roles.</p>
+      </section>
 
-    <section>
-        <h2>Featured Projects</h2>
-        <p>Details about your featured projects...</p>
-    </section>
+      <section class="section">
+        <div class="section-title">Target Roles</div>
+        <div class="links-grid">
+          <div class="skill-tag">Java Developer</div>
+          <div class="skill-tag">Software Testing</div>
+          <div class="skill-tag">QA Engineer</div>
+          <div class="skill-tag">Product Manager</div>
+          <div class="skill-tag">AI Training</div>
+          <div class="skill-tag">Backend Development</div>
+        </div>
+      </section>
 
-    <section>
-        <h2>Contact Me</h2>
-        <form action="https://formspree.io/f/xyzqabcd" method="POST" class="contact-form">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" required></textarea>
-            <button type="submit" class="btn send-button">Send Message</button>
-        </form>
-    </section>
+      <section class="section">
+        <div class="section-title">Core Skills</div>
+        <div class="skills-grid">
+          <div class="skill-tag">Java (working knowledge)</div>
+          <div class="skill-tag">Spring Boot (working knowledge)</div>
+          <div class="skill-tag">MySQL</div>
+          <div class="skill-tag">Git / GitHub</div>
+          <div class="skill-tag">REST APIs</div>
+          <div class="skill-tag">Testing</div>
+          <div class="skill-tag">CI / CD</div>
+          <div class="skill-tag">AWS (familiar)</div>
+          <div class="skill-tag">Agile / Scrum</div>
+          <div class="skill-tag">Product Mgmt</div>
+        </div>
+      </section>
 
+      <section class="section">
+        <div class="section-title">Featured Projects</div>
+        <div class="projects-list">
+          <a class="project-card" href="https://project.jcarl.net" target="_blank">
+            <div class="project-name">Music Library</div>
+            <div class="project-desc">Full‑stack Spring Boot application (bootcamp project). Browse and search albums with filtering by artist and genre.</div>
+          </a>
+          <a class="project-card" href="https://github.com/jc-gh25/MusicLibrary" target="_blank">
+            <div class="project-name">View on GitHub</div>
+            <div class="project-desc">Source and technical implementation of the bootcamp project.</div>
+          </a>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">⭐ Career Highlights</div>
+        <div class="highlights">
+          <ul>
+            <li>Led remote technical support evolution from a single-person shift to a global 24/7 team</li>
+            <li>Product Manager for SaaS tools used across 100+ countries</li>
+            <li>Mentored and coordinated distributed teams across multiple countries</li>
+            <li>15+ years of productive remote work in technical and customer-facing roles</li>
+            <li>Helped startups scale revenue and customer count through product and support improvements</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">Connect</div>
+        <div class="links-grid">
+          <a class="link-btn" href="https://linkedin.com/in/jeffcarllinked" target="_blank">LinkedIn</a>
+          <a class="link-btn" href="https://github.com/jc-gh25" target="_blank">GitHub</a>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">Message Me</div>
+        <div class="contact-section">
+          <h3>Get in touch</h3>
+          <p class="contact-note">I'm open to roles in Java development, software testing, product management, and AI training. If you'd like my resume or to discuss opportunities, please send a brief message below or reach out on LinkedIn.</p>
+
+          <form action="https://formspree.io/f/xyzqabcd" method="POST">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" required>
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" required></textarea>
+            </div>
+            <button class="submit-btn" type="submit">Send Message</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">© 2025 JC • Hosted on GitHub Pages — Resume available upon request</footer>
+  </div>
 </body>
 </html>
