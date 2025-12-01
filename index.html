@@ -1,0 +1,54 @@
+<html>
+<head>
+    <title>My Website</title>
+    <style>
+        /* Add more spacing between sections */
+        section {
+            margin-bottom: 20px;
+        }
+        
+        /* Ensure all form elements are properly sized and visible */
+        input[type="text"], input[type="email"], textarea {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 10px;
+        }
+
+        /* Change Send Message button to light green background */
+        button {
+            background-color: lightgreen;
+            color: black;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        /* Make bio paragraph fully black text */
+        .bio {
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Website!</h1>
+        <div class="contact">
+            <h2>Get In Touch <i class="icon-class-here"></i></h2> <!-- updated icon -->
+            <form action="submit.php" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" value="jeff@jcarl.net" placeholder="Your Email" required> <!-- updated email -->
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button> <!-- updated button style -->
+            </form>
+        </div>
+    </header>
+    <section>
+        <h2>Featured Projects</h2>
+        <p>Here are some of my featured projects without emojis.</p> <!-- removed emoji -->
+    </section>
+    <section>
+        <p class="bio">This is my bio. A little bit about me.</p> <!-- bio making black text -->
+    </section>
+</body>
+</html>
