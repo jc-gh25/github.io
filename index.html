@@ -1,54 +1,67 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>My Website</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
     <style>
-        /* Add more spacing between sections */
+        body {
+            background: linear-gradient(#000011, #1a1a4d);
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
         section {
-            margin-bottom: 20px;
+            padding: 50px 20px;
         }
-        
-        /* Ensure all form elements are properly sized and visible */
-        input[type="text"], input[type="email"], textarea {
-            width: 100%;
-            box-sizing: border-box;
-            padding: 10px;
-        }
-
-        /* Change Send Message button to light green background */
-        button {
-            background-color: lightgreen;
+        .btn {
+            background-color: #d3d3d3;
             color: black;
-            padding: 10px 15px;
+            padding: 10px 20px;
             border: none;
             cursor: pointer;
-            margin-top: 10px;
         }
-
-        /* Make bio paragraph fully black text */
         .bio {
             color: black;
+        }
+        .contact-form {
+            width: 100%;
+            max-width: 600px;
+            margin: auto;
+        }
+        .send-button {
+            background-color: #90EE90;
         }
     </style>
 </head>
 <body>
+
     <header>
-        <h1>Welcome to My Website!</h1>
-        <div class="contact">
-            <h2>Get In Touch <i class="icon-class-here"></i></h2> <!-- updated icon -->
-            <form action="submit.php" method="POST">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" value="jeff@jcarl.net" placeholder="Your Email" required> <!-- updated email -->
-                <textarea name="message" placeholder="Your Message" required></textarea>
-                <button type="submit">Send Message</button> <!-- updated button style -->
-            </form>
-        </div>
+        <h1>Welcome to My Landing Page</h1>
     </header>
+
+    <section class="bio">
+        <h2>About Me</h2>
+        <p>Your bio text here. Include your career highlights, such as completed Java certification.</p>
+        <p>Links: <a href="https://www.linkedin.com/in/yourprofile">LinkedIn</a>, <a href="https://github.com/yourprofile">GitHub</a></p>
+    </section>
+
     <section>
         <h2>Featured Projects</h2>
-        <p>Here are some of my featured projects without emojis.</p> <!-- removed emoji -->
+        <p>Details about your featured projects...</p>
     </section>
+
     <section>
-        <p class="bio">This is my bio. A little bit about me.</p> <!-- bio making black text -->
+        <h2>Contact Me</h2>
+        <form action="https://formspree.io/f/xyzqabcd" method="POST" class="contact-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+            <button type="submit" class="btn send-button">Send Message</button>
+        </form>
     </section>
+
 </body>
 </html>
